@@ -108,18 +108,23 @@ html,body{
 }
 
 /* Banner Section */
+.banner-section{
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 98vh;
+    position: relative;
+}
 .banner-content{
     display: flex;
     flex-direction: column;
-    max-width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
+    padding-top: 70px;
 }
 
 .banner_title{
     color: white;
     font-size: 78px;
-    line-height: 1.2;
+    line-height: 1.1;
+    margin:0;
     margin-bottom:16px;
 }
 
@@ -128,12 +133,14 @@ html,body{
   font-size: 22px;
   font-weight: 700;
   line-height: 1.5;
+  color: white;
 }
 
 .banner_overview{
   font-size: 16.4px;
   color:white;
   line-height: 1.33;
+  max-width: 50%;
 }
 
 .action-button-cont{
@@ -153,10 +160,33 @@ html,body{
     font-size: 16px;
     font-weight: 700;
     align-items: center;
+    cursor: pointer;
+}
+
+.action-button:last-child{
+    background-color: rgba(109, 109, 110, 0.7);
+    color: white;
+}
+
+.banner_fadebottom{
+    height: 120px;
+    background:linear-gradient(180deg,
+        transparent,
+        rgba(37,37,37,.61),
+        #141414
+    ); 
+    position: absolute;
+    left:0;
+    bottom: 0;
+    width: 100%;
+
 }
  /* responsive css */
  @media screen and (max-width:767px) {
     .main-nav{
        display: none;
+    }
+    .banner_overview{
+        max-width: 100%;
     }
  }
