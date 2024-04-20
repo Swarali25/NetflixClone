@@ -18,7 +18,13 @@ html,body{
 /* Header Css
  */
  header{
-    /* background-color: grey; */
+    background-color: transparent;
+    position: fixed;
+    left:0;
+    top:0;
+    width: 100%;
+    z-index:2;
+    transition: all ease 600ms;
  }
 
  .header-cont{
@@ -26,6 +32,10 @@ html,body{
     flex-direction: row;
     justify-content: space-between;
  }
+
+ header.black-bg{
+    background-color: rgb(20, 20, 20);
+}
  .left-cont,.right-cont{
     display: flex;
     flex-direction: row;
@@ -69,7 +79,7 @@ html,body{
 
  /* Movie Section CSS */
 .movie-section{
-
+  margin: 41px 0px;
 }
 .movie-section-heading{
   font-size: 20px;
@@ -113,6 +123,7 @@ html,body{
     background-size: cover;
     min-height: 98vh;
     position: relative;
+    padding-top: 70px;
 }
 .banner-content{
     display: flex;
@@ -126,6 +137,7 @@ html,body{
     line-height: 1.1;
     margin:0;
     margin-bottom:16px;
+    max-width: 50%;
 }
 
 .banner_info{
@@ -186,7 +198,7 @@ html,body{
     .main-nav{
        display: none;
     }
-    .banner_overview{
+    .banner_overview,.banner_title{
         max-width: 100%;
     }
  }
