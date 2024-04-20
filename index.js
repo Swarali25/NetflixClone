@@ -148,6 +148,19 @@ function searchMovieTrailer(movieName,iframeId){
   })
   .catch(err => console.log(err))
 }
+
+function setEventListners(){
+    const settingBtn = document.getElementById('settings-btn');
+    settingBtn.addEventListener("mouseenter", ()=>{
+        document.getElementById('settings-popup').style.display="block"
+    })
+    const settingPopup = document.getElementById('settings-popup');
+    settingPopup.addEventListener("mouseleave", (event)=>{
+        console.log(event.target.value)
+        document.getElementById('settings-popup').style.display="none"
+    })
+}
+
 window.addEventListener('load', function(){
     init();
     window.addEventListener('scroll', function(){
@@ -156,4 +169,5 @@ window.addEventListener('load', function(){
         if(window.scrollY  > 5 ) header.classList.add('black-bg')
         else header.classList.remove('black-bg')
     })
+    setEventListners();
 });

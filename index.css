@@ -271,6 +271,55 @@ html,body{
     width: 100%;
 
 }
+
+/* settings popup */
+.settings-btn{
+    position: relative;
+}
+.settings-popup{
+    width:220px;
+    display: none;
+    position: absolute;
+    top:50px;
+    right:23px;
+    background-color: black;
+}
+.settings-popup-innerdiv{
+    display: flex;
+    flex-direction: column;
+    color:white;
+    padding: 0px 20px;
+    
+}
+
+.setting-menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+.setting-menu svg{
+    color: #b3b3b3;
+}
+
+.setting-menu p{
+    padding: 0px 8px;
+    font-size: 13px;
+}
+.setting-menu p:hover{
+   text-decoration: underline;
+}
+.settings-popup  button{
+    background-color: black;
+    color: white;
+    border: none;
+    border-top: 1px solid whitesmoke;
+    width: 100%;
+    padding: 10px;
+}
+
  /* responsive css */
  @media screen and (max-width:767px) {
     .main-nav{
