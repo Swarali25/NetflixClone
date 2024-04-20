@@ -133,12 +133,67 @@ html,body{
     display: block;
 }
 
-
-
 .movie-item:hover{
-    transform: scale(1.3);
+    transform: scale(1.2);
     transition: tranform ease-in 1s;
 }
+
+.movie-item-info{
+    padding: 16px;
+    position: relative;
+}
+.movie-item-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.movie-item-action-button{
+    border-radius: 23px;
+    padding: 4px;
+    border: none;
+    margin-right: 7px;
+}
+
+.movie-item-action-button-2{
+    border-radius: 23px;
+    padding: 3px;
+    background-color: rgba(42, 42, 42, .6);
+    border: 2px solid hsla(0, 0%, 100%, 0.7);
+    color:white;
+    margin-right: 7px;
+    cursor: pointer;
+}
+.movie-item-info div{
+    color:white;
+    font-size: 13px;
+}
+/* .movie-item-info div span::before{
+    color: #646464;
+    content: "\2022";
+    display: inline-block;
+    padding-right: .5vw;
+} */
+
+.movie-item-releaseInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.movie-item-rating{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* .movie-item-detail-info-modal{
+    position: absolute;
+    margin:auto;
+    left:50%;
+    top:50%;
+    width: 80vw;
+    background-color: red;
+    transform: translate(-50%, -50%);
+    display: none;
+} */
 
 /* Banner Section */
 .banner-section{
