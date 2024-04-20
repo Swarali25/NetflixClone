@@ -77,21 +77,22 @@ function buildMoviesSection(list,categoryName){
   const moviesCont = document.getElementById('movies-cont');
 
   const moviesListHTML = list.map(item =>{
+    console.log(item);
     return `
-    <img class="movie-item" src="${imgPath}${item.backdrop_path}" alt="${item.title}" onClick="searchMovieTrailer('${item.title}')">
-    `
-  })
-
+    <div class="movie-item">
+        <img class="movie-item-img" src="${imgPath}${item.backdrop_path}" alt="${item.title}" onmouseenter="searchMovieTrailer('${item.title}','yt${item.id}')">
+        <iframe width="245px" height="150px"
+src="" id="yt${item.id}"></iframe>
+    </div>`
+  }).join('');
+ 
   const moviesSectionHTML = `
     <h2 class="movie-section-heading">${categoryName}<span class="explore-nudge">Explore All</span></h2>
     <div class="movies-row">
        ${moviesListHTML}
     </div>`
 
-  console.log(moviesListHTML);
-  console.log(moviesSectionHTML);
-
-  const div= document.createElement(('div'));
+  const div= document.createElement('div');
   div.className = "movie-section";
   div.innerHTML = moviesSectionHTML;
 
@@ -101,7 +102,7 @@ function buildMoviesSection(list,categoryName){
  
 }
 
-function searchMovieTrailer(movieName){
+function searchMovieTrailer(movieName,iframeId){
   if(!movieName) return;
   fetch(apiPaths.searchOnYoutube(movieName))
   .then(res => res.json())
@@ -109,7 +110,9 @@ function searchMovieTrailer(movieName){
     const bestResult = res.items[0];
     const youtubeUrl = `https://www.youtube.com/watch?v=${bestResult.id.videoId}`
     console.log(youtubeUrl)
-    window.open(youtubeUrl,"_blank");
+    
+    const elements = document.getElementById(iframeId);
+    elements.src=`https://www.youtube.com/embed/${bestResult.id.videoId}?autoplay=1&controls=0`
   })
   .catch(err => console.log(err))
 }
