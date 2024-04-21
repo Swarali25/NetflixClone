@@ -147,6 +147,7 @@ function setEventListners(){
     setSettingButtonEventListners();
     setManageProfileEventListners();
     setProfilePopupEventListners();
+    setHamburgerIconEventListners();
 }
 
 function setSettingButtonEventListners(){
@@ -199,6 +200,27 @@ function setProfilePopupEventListners(){
             location.reload(); 
         }
     });
+}
+
+function setHamburgerIconEventListners(){
+    const Hamburgerbtn = document.getElementById('hamburger-icon');
+    const VerticalContainer = document.getElementById('vertical-cont');
+    // Hamburgerbtn.addEventListener("click", ()=>{
+    //     VerticalContainer.style.display="block"
+    // })
+
+    window.addEventListener("click", (event)=>{
+        if(Hamburgerbtn.contains(event.target))
+        {
+            console.log(event,"!")
+            VerticalContainer.style.display="block"
+        }
+        else if(!VerticalContainer.contains(event.target))
+        {
+            console.log(event)
+            VerticalContainer.style.display="none"
+        }
+    })
 }
 window.addEventListener('load', function(){
     init();

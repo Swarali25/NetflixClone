@@ -50,7 +50,6 @@ html,body{
     list-style: none;
     display: inline-flex;
     flex-direction: row;
-    /* display: none; */
 }
  .nav-item{
     color:#e5e5e5;
@@ -76,7 +75,57 @@ html,body{
     max-width: 36px;
  }
 
+ .search-input{
+    border-radius: 0;
+    font-size: 16px;
+    padding: 4px .5em;
+    width: 6em;
+    color: #fff;
+    background: transparent url(https://assets.nflxext.com/ffe/siteui/akira/fallback/secondary_button_hover_background.png) repeat;
+    border: 1px solid #ccc;
+    float: right;
+    margin: 0 20px 0 0;
+    display:none;
+ }
 
+ #hamburger-icon{
+    display: none;
+ }
+
+ .vertical-cont{
+    display: none;
+    background: black;
+    color: grey;
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    padding: 5px 10px;
+    display: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height:98vh;
+}
+.profile{
+    display: flex;
+}
+.userInfo{
+    line-height: 0em;
+    padding: 0px 8px;
+}
+
+.account-menu{
+    border-bottom: 1px solid #333;
+}
+.account-menu ul,.netflix-menu ul{
+    list-style: none;
+    line-height: 1.6em;
+    padding: 0px 0px;
+    font-weight: 700;
+}
+
+.netflix-menu ul{
+    line-height: 2em;
+}
  /* Movie Section CSS */
 .movie-section{
   margin: 41px 0px;
@@ -427,10 +476,45 @@ html,body{
 }
  /* responsive css */
  @media screen and (max-width:767px) {
+    .container{
+        width: 98vw;
+     }
+ }
+
+ @media screen and (max-width:767px) {
     .main-nav{
        display: none;
     }
     .banner_overview,.banner_title{
         max-width: 100%;
+    }
+ }
+
+ @media screen and (max-width:480px) {
+    .container{
+       width: 96vw;
+       margin: 0px auto;
+    }
+    .banner-section{
+        display: none;
+    }
+    .movie-section {
+        margin: 80px 0px;
+    }
+    #hamburger-icon {
+        display: block;
+        transform: scale(0.5);
+    }
+    .right-cont svg,#settings-btn{
+        display: none;
+    }
+    .movie-item-action-button,.movie-item-action-button-2{
+        padding: 2px;
+    }
+    .movie-item {
+        width: 200px;
+    }
+    .search-input{
+        display: block;
     }
  }
