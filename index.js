@@ -7,7 +7,7 @@ const apiPaths = {
     fetchAllCategories : `${apiEndPoint}/genre/movie/list?api_key=${apiKey}`,
     fetchMoviesList: (id) => `${apiEndPoint}/discover/movie?api_key=${apiKey}&with_genres=${id}`,
     fetchTrending:`${apiEndPoint}/trending/all/day?api_key=${apiKey}&language=en-US`,
-    searchOnYoutube : (query) => `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=AIzaSyAkd_LJyi6WnZl-Nmhsq0Y6wXiSTc774ZE`
+    searchOnYoutube : (query) => `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=AIzaSyBmje5iYMimu8ooNK5keZ4JmBBv9W_LE_0`
 }
 
 // Boots up the app
@@ -128,12 +128,6 @@ src="" id="yt${item.id}"></iframe>
  
 }
 
-// function openMovieModal(){
-//     console.log("open modal")
-//     const moviesCont = document.getElementById('movieModal');
-//     moviesCont.style.display = "block";
-// }
-
 function searchMovieTrailer(movieName,iframeId){
   if(!movieName) return;
   fetch(apiPaths.searchOnYoutube(movieName))
@@ -150,6 +144,13 @@ function searchMovieTrailer(movieName,iframeId){
 }
 
 function setEventListners(){
+    setSettingButtonEventListners();
+    setManageProfileEventListners();
+    setProfilePopupEventListners();
+}
+
+function setSettingButtonEventListners(){
+    //settings button event listner to open/close setting popup
     const settingBtn = document.getElementById('settings-btn');
     settingBtn.addEventListener("mouseenter", ()=>{
         document.getElementById('settings-popup').style.display="block"
@@ -161,6 +162,44 @@ function setEventListners(){
     })
 }
 
+function setManageProfileEventListners(){
+    //manage profile button event listner to open manage profile popup
+    const manageProfilebtn = document.getElementById('manage-profile');
+    const headerSection =document.getElementById('header');
+    const bannerSection =document.getElementById('banner-section');
+    const moviesSection =document.getElementById('movies-cont');
+
+    manageProfilebtn.addEventListener("click", ()=>{
+        document.getElementById('profile-section').style.display="flex";
+        headerSection.style.display="none";
+        bannerSection.style.display="none";
+        moviesSection.style.display="none";
+    })
+}
+
+function setProfilePopupEventListners(){
+    //submit - done  button event listner to open who is watching profile popup
+    const submitbtn = document.getElementById('profile-button');
+    const profileSectionHeading = document.getElementById("profile-section-heading");
+    const profileSectionSvg = document.querySelectorAll('.profile-icon-svg');
+    const manageProfileBtn = document.getElementById("manage-profile-button");
+    submitbtn.addEventListener("click", ()=>{        
+        profileSectionHeading.innerText="Who's watching?";
+        profileSectionSvg.forEach((icon)=>{
+            icon.style.display="none";
+        })
+        submitbtn.style.display="none";
+        manageProfileBtn.style.display="block";
+        
+    })
+
+    const userProfileBtn = document.getElementById('user-profile');
+    userProfileBtn.addEventListener("click", ()=>{
+        if(manageProfileBtn.style.display == "block"){
+            location.reload(); 
+        }
+    });
+}
 window.addEventListener('load', function(){
     init();
     window.addEventListener('scroll', function(){
