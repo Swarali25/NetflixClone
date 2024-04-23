@@ -303,6 +303,98 @@ html,body{
 
 }
 
+.more-info-section{
+    background: linear-gradient(0deg, #181818, transparent 50%);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    box-sizing: inherit;
+    letter-spacing: 0 !important;
+    color: #fff;
+    font-size: 16px;
+    font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    /* display: none; */
+    z-index:12;
+    transition: all 1s ease-in;
+}
+.more-info-banner{
+    border: 0;
+    width: 850px;
+    height: 470px;
+    margin: 15px auto 0px auto;
+    display: block;
+    top:0px;
+    position: relative;
+
+}
+
+.more-info-title{
+    position: absolute;
+    top: 30%;
+    left: 23vw;
+    font-size: 2em;
+}
+.more-info-banner-inner-overlay{
+    position: absolute;
+    bottom: 25%;
+    left: 14em;
+    position: absolute;
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+}
+#more-info-action-button{
+    color:black;
+    background-color: white;
+}
+
+.more-info-button-left-cont{
+    position: relative;
+    left: 2em;
+}
+.more-info-button-right-cont{
+    display: inline-block;
+}
+
+.more-info-close-btn{
+    position: absolute;
+    top: 6%;
+    margin: 0px auto;
+    left: 79%;
+    background: black;
+    padding: 10px;
+    border: none;
+    border-radius: 54px;
+}
+
+.more-info-close-btn svg{ 
+    height: 18px;
+    width: 18px;
+}
+
+.more-info-movie-content{
+    width: 850px;
+    margin: 0px auto;
+    background-color: black;
+}
+
+.more-info-movie-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1em 34px 2em 34px;
+}
+
+.more-info-movie-details-left{
+    width: 64vw;
+}
+.more-info-movie-releaseDetails{
+    display: flex;
+    flex-direction: column;
+}
+
+
 /* settings popup */
 .settings-btn{
     position: relative;
