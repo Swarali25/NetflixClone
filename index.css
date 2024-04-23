@@ -394,6 +394,59 @@ html,body{
     flex-direction: column;
 }
 
+.more-info-related-movies{
+    margin: 0px 2.5em;
+}
+
+
+.related-movie{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height:20em;
+    width: 18vw;
+    background: #141414;
+    border-radius: 8px;
+    position: relative;
+}
+
+.related-movie-more-info{
+    position: relative;
+    top:18%;
+}
+
+.related-movie img{
+    border-radius: 8px 8px 0px 0px;
+    position: absolute;
+    width: 100%;
+    top: 0px; 
+}
+.related-movies-section{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    row-gap: 15px;
+}
+.related-movie-releaseDetails{
+    color: #d2d2d2;
+    margin: 0;
+    padding: 0 1em 1em;
+}
+
+.releated-movie-upperDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.related-movie-releaseDetails #title{
+    margin: 0px 0px;
+    font-weight: bold;
+}
+
+.related-movie-item-rating{
+    display: flex;
+}
 
 /* settings popup */
 .settings-btn{
