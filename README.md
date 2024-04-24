@@ -1,5 +1,5 @@
 # Netflix Clone Web Page
-	This project is a Netflix clone web page built using HTML5, CSS, and JavaScript. It replicates the Netflix experience with several key features:
+	This project is a Netflix clone web page built using HTML5, CSS, and JavaScript. It replicates the Netflix experience with several key features: \n
  **Dynamic Movie Data**: The page fetches real-time movie data using the IMDb API, ensuring up-to-date and accurate information.
  **YouTube Trailers**: Utilizing the YouTube Data API v3, users can view movie trailers directly on the site, enhancing the user experience.
  **Genre-Based Display**: Movies are categorized into genres like Trending Now, Action, Thriller, etc., making it easy for users to find their preferred movies.
