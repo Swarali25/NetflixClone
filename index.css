@@ -314,7 +314,6 @@ html,body{
     color: #fff;
     font-size: 16px;
     font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
-    /* display: none; */
     z-index:12;
     transition: all 1s ease-in;
 }

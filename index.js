@@ -9,7 +9,7 @@ const apiPaths = {
     `${apiEndPoint}/discover/movie?api_key=${apiKey}&with_genres=${id}`,
   fetchTrending: `${apiEndPoint}/trending/all/day?api_key=${apiKey}&language=en-US`,
   searchOnYoutube: (query) =>
-    `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=AIzaSyBmje5iYMimu8ooNK5keZ4JmBBv9W_LE_0`,
+    `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=AIzaSyDLqvhQUpOkeZq4K5mgp4XI19wz0GVVf8U`,
   fetchMovieInfo: (id) =>
     `${apiEndPoint}/movie/${id}?api_key=${apiKey}`,
   fetchRelateMovieInfo: (id) =>
@@ -410,10 +410,6 @@ function setProfilePopupEventListners() {
 function setHamburgerIconEventListners() {
   const Hamburgerbtn = document.getElementById("hamburger-icon");
   const VerticalContainer = document.getElementById("vertical-cont");
-  // Hamburgerbtn.addEventListener("click", ()=>{
-  //     VerticalContainer.style.display="block"
-  // })
-
   window.addEventListener("click", (event) => {
     if (Hamburgerbtn.contains(event.target)) {
       console.log(event, "!");
